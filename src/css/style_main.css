@@ -1,0 +1,71 @@
+/* style_main.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+.arrow-left, .arrow-right {
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0 1rem;
+}
+
+.arrow-left img, .arrow-right img {
+    width: 50px; /* 矢印の画像サイズ */
+}
+
+.main-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.main-text img {
+    display: block;
+    margin: 10px auto;
+    width: 300px; /* テキスト画像のサイズ */
+}
+
+@media (max-width: 768px) {
+    .main-text img {
+        width: 200px; /* テキスト画像のサイズを小さく */
+    }
+    .arrow-left img, .arrow-right img {
+        width: 30px; /* 矢印の画像サイズを小さく */
+    }
+}
