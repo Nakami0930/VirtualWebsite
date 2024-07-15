@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style_main.css">
+    <title>日帰り温泉 幻想温泉</title>
+</head>
+<body>
+    <div class="container">
+        <div class="image-wrapper">
+            <!-- 最初に表示される画像 -->
+            <img id="onsen-image" src="C:\Users\ymira\Desktop\Works\VirtualWebsite\images\onsen_img.jpg" alt="外観イメージ">
+            <div class="img-overlay">
+                <div class="arrow-left" onclick="changeImage(-1)">
+                    <img src="C:\Users\ymira\Desktop\Works\VirtualWebsite\images\Arrow-Left.png" alt="左矢印">
+                </div>
+                <div class ="main-text">
+                    <!-- 初期テキスト -->
+                    <img src="C:\Users\ymira\Desktop\Works\VirtualWebsite\images\最高の一日を.png" alt="最高の一日を">
+                    <img src="C:\Users\ymira\Desktop\Works\VirtualWebsite\images\幻想温泉.png" alt="幻想温泉">
+                </div>
+                <div class="arrow-right" onclick="changeImage(1)">
+                    <img src="C:\Users\ymira\Desktop\Works\VirtualWebsite\images\Arrow-Right.png" alt="右矢印">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 画像の配列
+        const images = [
+            "C:\\Users\\ymira\\Desktop\\Works\\VirtualWebsite\\images\\onsen_img.jpg",
+            "C:\\Users\\ymira\\Desktop\\Works\\VirtualWebsite\\images\\onsen_img2.jpg",
+            "C:\\Users\\ymira\\Desktop\\Works\\VirtualWebsite\\images\\onsen_img3.jpg"
+        ];
+        let currentIndex = 0; // 現在の画像のインデックス
+
+        function changeImage(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            document.getElementById("onsen-image").src = images[currentIndex];
+        }
+    </script>
+    <script src="../js/script.js"></script>
+</body>
+</html>
