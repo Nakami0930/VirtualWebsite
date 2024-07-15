@@ -48,15 +48,10 @@ body, html {
 }
 
 .main-text img {
-    width: 50px; /* 画像の幅を100pxに設定 */
-    height: auto; /* 高さを自動調整してアスペクト比を保持 */
     float: right; /* 画像を右寄せにする */
-}
-    text-align: right;
     position: absolute;
     width: 30px; /* 画像の幅を100pxに設定 */
-    height: 50px; /* 高さを自動調整してアスペクト比を保持 */
-    
+    height: auto; /* 高さを自動調整してアスペクト比を保持 */   
     transform: translate(-50%, -50%);
 }
 
