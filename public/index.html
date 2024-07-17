@@ -30,19 +30,26 @@
     <script>
         // 画像の配列
         const images = [
-            "C:\\Users\\ymira\\Desktop\\Works\\VirtualWebsite\\images\\onsen_img.jpg",
-            "C:\\Users\\ymira\\Desktop\\Works\\VirtualWebsite\\images\\onsen_img2.jpg",
-            "C:\\Users\\ymira\\Desktop\\Works\\VirtualWebsite\\images\\onsen_img3.jpg"
+            "images/onsen_img.jpg",
+            "images/onsen_img2.jpg",
+            "images/onsen_img3.jpg"
         ];
-        let currentIndex = 0; // 現在の画像のインデックス
 
         function changeImage(direction) {
-            currentIndex += direction;
-            if (currentIndex < 0) currentIndex = images.length - 1;
-            if (currentIndex >= images.length) currentIndex = 0;
-            document.getElementById("onsen-image").src = images[currentIndex];
-        }
+    // 現在の画像のインデックスを取得
+    const currentImage = document.getElementById('onsen-image').src;
+    const currentImageFilename = currentImage.split('/').pop();
+    const currentIndex = images.indexOf(currentImageFilename);
+
+    // 新しいインデックスを計算
+    let newIndex = (currentIndex + direction) % images.length;
+    if (newIndex < 0) {
+        newIndex = images.length - 1;
+    }
+
+    // 画像を新しいものに切り替え
+    document.getElementById('onsen-image').src = images[newIndex];
+}
     </script>
-    <script src="../js/script.js"></script>
 </body>
 </html>
