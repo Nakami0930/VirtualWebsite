@@ -36,20 +36,20 @@
         ];
 
         function changeImage(direction) {
-    // 現在の画像のインデックスを取得
-    const currentImage = document.getElementById('onsen-image').src;
-    const currentImageFilename = currentImage.split('/').pop();
-    const currentIndex = images.indexOf(currentImageFilename);
+        // 現在の画像のインデックスを取得
+        const currentImage = document.getElementById('onsen-image').src;
+        const currentImageFilename = currentImage.split('/').pop();
+        const currentIndex = images.indexOf(currentImageFilename);
 
-    // 新しいインデックスを計算
-    let newIndex = (currentIndex + direction) % images.length;
-    if (newIndex < 0) {
+        // 新しいインデックスを計算
+        let newIndex = (currentIndex + direction) % images.length;
+        if (newIndex < 0) {
         newIndex = images.length - 1;
-    }
+     }
 
-    // 画像を新しいものに切り替え
-    document.getElementById('onsen-image').src = images[newIndex];
-}
+        // 画像を新しいものに切り替え
+        document.getElementById('onsen-image').src = images[newIndex];
+    }
     </script>
 </body>
 </html>
