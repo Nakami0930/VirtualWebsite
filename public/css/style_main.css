@@ -47,23 +47,23 @@ body, html {
     width: 50px; /* 矢印の画像サイズ */
 }
 
-.main-text img {
-    float: right; /* 画像を右寄せにする */
+.main-text {
     position: absolute;
-    width: 30px; /* 画像の幅を100pxに設定 */
-    height: auto; /* 高さを自動調整してアスペクト比を保持 */   
-    transform: translate(-50%, -50%);
+    top: 20px;
+    right: 100px; /* 右から左に変更 */
+    display: flex;
+    flex-direction: column;
 }
 
-.main-text img {
-    display: block;
-    margin: 10px auto;
-    width: 30px; /* テキスト画像のデフォルトサイズ */
+.text-images img {
+    margin-bottom: 5px; /* 画像間のスペース */
+    width: 50px; /* 画像の幅を保持 */
+    height: auto; /* 高さを自動調整してアスペクト比を保持 */
 }
 
 @media (max-width: 768px) {
-    .main-text img {
-        width: 200px; /* モバイルビューでテキスト画像のサイズを大きくする */
+    .text-images img {
+        width: 30px; /* モバイルビューでテキスト画像のサイズを小さく調整 */
     }
     .arrow-left img, .arrow-right img {
         width: 30px; /* モバイルビューで矢印の画像サイズを適切に調整 */
