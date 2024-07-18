@@ -7,38 +7,40 @@ const images = [
     "images/onsen_img5.jpg"
 ];
 
+// 画像とリンク先の配列
+const links = [
+    "index.html",
+    "onsen.html",
+    "food.html",
+    "introduction.html",
+    "inquiry.html"
+];
+
 // テキスト画像の配列
 const textImages = [
     [
         "images/幻想温泉.png",
         "images/最高の一日を.png"
-
     ],
     [
         "images/癒しの湯.png",
         "images/極楽の気分.png"
     ],
     [
-        "images/最高のお食事.png",
+        "images/最高のお食事.png"
     ],
     [
-        "images/アクセス.png",
+        "images/アクセス.png"
     ],
     [
-        "images/お問い合わせ.png",
+        "images/お問い合わせ.png"
     ]
 ];
 
-// 画像とリンク先の配列
-const links = [
-    "public/index.html",
-    "public/onsen.html",
-    "public/food.html",
-    "public/introduction.html",
-    "public/inquiry.html"
-];
+function changeImage(direction, event) {
+    // イベントのバブルアップを停止
+    if (event) event.stopPropagation();
 
-function changeImage(direction) {
     const imgElement = document.getElementById('onsen-image');
     const textImagesElement = document.getElementById('text-images');
     // 現在の画像のインデックスを取得
@@ -67,13 +69,13 @@ function changeImage(direction) {
     textImagesElement.innerHTML = newTextImages.map(src => `<img src="${src}" alt="${src}">`).join('');
 
     // クリックイベントを更新
-    imgElement.onclick = function() {
+    imgElement.parentNode.onclick = function() {
         window.location.href = links[newIndex];
     }
 }
 
 // 初期化時にクリックイベントを設定
-document.getElementById('onsen-image').onclick = function() {
+document.querySelector('.image-wrapper').onclick = function() {
     window.location.href = links[0];
 }
 

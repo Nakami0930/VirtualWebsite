@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ</title>
+    <link rel="stylesheet" href="/public/css/style_inquiry.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="images/inquiry_icon.jpg" alt="お問い合わせアイコン" class="icon">
+            <h1>お問い合わせ</h1>
+        </div>
+        <div class="form-container">
+            <form action="submit_form.php" method="post">
+                <div class="form-group">
+                    <label for="first_name">お名前<span>*</span></label>
+                    <input type="text" id="first_name" name="first_name" required>
+                    <input type="text" id="last_name" name="last_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="first_name_kana">お名前(カナ)<span>*</span></label>
+                    <input type="text" id="first_name_kana" name="first_name_kana" required>
+                    <input type="text" id="last_name_kana" name="last_name_kana" required>
+                </div>
+                <div class="form-group">
+                    <label for="postal_code">郵便番号<span>*</span></label>
+                    <input type="text" id="postal_code" name="postal_code" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">ご住所<span>*</span></label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone_number">電話番号<span>*</span></label>
+                    <input type="text" id="phone_number" name="phone_number" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">メールアドレス<span>*</span></label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="email_confirmation">メールアドレス(確認用)<span>*</span></label>
+                    <input type="email" id="email_confirmation" name="email_confirmation" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">お問い合わせ内容・ご意見等<span>*</span></label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>幻想温泉の資料送付</label>
+                    <input type="radio" id="yes" name="request_materials" value="yes">
+                    <label for="yes">希望する</label>
+                    <input type="radio" id="no" name="request_materials" value="no" checked>
+                    <label for="no">希望しない</label>
+                </div>
+                <div class="form-group">
+                    <label for="privacy_policy">
+                        <input type="checkbox" id="privacy_policy" name="privacy_policy" required> 個人情報保護方針に同意する
+                    </label>
+                </div>
+                <button type="submit">送信</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
