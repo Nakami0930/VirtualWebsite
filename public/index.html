@@ -15,7 +15,7 @@
                 <div class="arrow-left" onclick="changeImage(-1)">
                     <img src="images/Arrow-Left.png" alt="左矢印">
                 </div>
-                <div class ="main-text">
+                <div class="main-text">
                     <!-- 初期テキスト -->
                     <img src="images/最高の一日を.png" alt="最高の一日を">
                     <img src="images/幻想温泉.png" alt="幻想温泉">
@@ -32,24 +32,31 @@
         const images = [
             "images/onsen_img.jpg",
             "images/onsen_img2.jpg",
-            "images/onsen_img3.jpg"
+            "images/onsen_img3.jpg",
+            "images/onsen_img4.jpg",
+            "images/onsen_img5.jpg",
         ];
 
         function changeImage(direction) {
-        // 現在の画像のインデックスを取得
-        const currentImage = document.getElementById('onsen-image').src;
-        const currentImageFilename = currentImage.split('/').pop();
-        const currentIndex = images.indexOf(currentImageFilename);
+            // 現在の画像のインデックスを取得
+            const currentImage = document.getElementById('onsen-image').src;
+            console.log("Current Image Path: " + currentImage);
+            const currentImageFilename = currentImage.split('/').pop();
+            console.log("Current Image Filename: " + currentImageFilename);
+            const currentIndex = images.indexOf("images/" + currentImageFilename);
+            console.log("Current Index: " + currentIndex);
 
-        // 新しいインデックスを計算
-        let newIndex = (currentIndex + direction) % images.length;
-        if (newIndex < 0) {
-        newIndex = images.length - 1;
-     }
+            // 新しいインデックスを計算
+            let newIndex = (currentIndex + direction) % images.length;
+            if (newIndex < 0) {
+                newIndex = images.length - 1;
+            }
+            console.log("New Index: " + newIndex);
 
-        // 画像を新しいものに切り替え
-        document.getElementById('onsen-image').src = images[newIndex];
-    }
+            // 画像を新しいものに切り替え
+            document.getElementById('onsen-image').src = images[newIndex];
+            console.log("New Image Path: " + images[newIndex]);
+        }
     </script>
 </body>
 </html>
